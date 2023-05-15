@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Mokhalfatak</string>
+    <string name="moto">Streamline your traffic violation payments.
+        Your one-stop-shop for paying traffic violations</string>
+    <string name="getStarted">Get Started</string>
+    <string name="findYour">Find your</string>
+    <string name="signIn">Sign In</string>
+    <string name="noAccount">Don\'t have an account?</string>
+    <string name="signUp">Sign Up</string>
+    <string name="register">Register</string>
+    <string name="firstNameHint">First name</string>
+    <string name="lastNameHint">Last name</string>
+    <string name="emailHint">Email</string>
+    <string name="phoneHint">Phone Number</string>
+    <string name="passwordHint">Password</string>
+    <string name="confirmPasswordHint">Confirm password</string>
+    <string name="dateOfBirthHint">Date of birth</string>
+    <string name="nationalID">National ID</string>
+    <string name="accountSet">Your account is set and ready to use.</string>
+    <string name="save">Save</string>
+    <string name="profile">Profile</string>
+    <string name="viewviolation">View Violations</string>
+    <string name="Police">Police Officer</string>
+    <string name="User">User</string>
+    <string name="badge_number">Badge Number</string>
+</resources>

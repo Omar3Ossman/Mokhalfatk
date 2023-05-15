@@ -1,0 +1,184 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Payment">
+
+    <ImageView
+        android:id="@+id/pic"
+        android:layout_width="wrap_content"
+        android:layout_height="300dp"
+        android:padding="5dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@drawable/payment" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="8dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.52"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pic">
+
+
+
+        <TextView
+            android:id="@+id/fawry"
+            android:layout_width="116dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/button"
+            android:elevation="10dp"
+            android:text="Pay With Fawry"
+            android:textColor="#ffffff"
+            android:textSize="15sp" />
+
+        <EditText
+            android:id="@+id/line1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center_horizontal"
+            android:minHeight="48dp"
+            android:text="Enter the code"
+            android:textColor="#000000" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_margin="12dp"
+            android:background="@android:color/black"
+            android:textAlignment="center" />
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight=".7"
+            android:paddingRight="15dp">
+
+            <LinearLayout
+                android:id="@+id/payment_amount_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:gravity="bottom"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/card"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textSize="15dp"
+                    android:layout_marginBottom="10dp"
+                    android:elevation="10dp"
+                    android:textColor="#ffffff"
+                    android:background="@drawable/button"
+                    android:text="Pay With Card" />
+
+                <TextView
+                    android:id="@+id/payment_amount_holder"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif"
+                    android:text="Card Information"
+                    android:textColor="#000000"
+                    android:textSize="17sp" />
+
+            </LinearLayout>
+
+
+            <EditText
+                android:id="@+id/card_name"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_below="@+id/payment_amount_layout"
+                android:layout_marginTop="15dp"
+                android:autofillHints=""
+                android:background="@drawable/edittext_bg"
+                android:hint="Name on Card"
+                android:inputType="textPersonName"
+                android:lines="1"
+                android:maxLines="1"
+                android:paddingLeft="15dp" />
+
+            <EditText
+                android:id="@+id/card_number"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_below="@+id/card_name"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/edittext_bg"
+                android:hint="Card Number"
+                android:inputType="phone"
+                android:lines="1"
+                android:maxLength="19"
+                android:maxLines="1"
+                android:paddingLeft="15dp" />
+
+            <LinearLayout
+                android:id="@+id/expiry_date_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/card_number"
+                android:layout_marginTop="15dp"
+                android:weightSum="1">
+
+                <EditText
+                    android:id="@+id/expiry_date"
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_below="@+id/card_name"
+                    android:layout_weight=".50"
+                    android:background="@drawable/edittext_bg"
+                    android:hint="MM/YY"
+                    android:inputType="phone"
+                    android:lines="1"
+                    android:maxLength="5"
+                    android:maxLines="1"
+                    android:paddingLeft="15dp"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                <EditText
+                    android:id="@+id/cvc"
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_weight=".45"
+                    android:background="@drawable/edittext_bg"
+                    android:hint="CCV"
+                    android:inputType="phone"
+                    android:lines="1"
+                    android:maxLength="3"
+                    android:maxLines="1"
+                    android:paddingLeft="15dp"
+                    tools:ignore="TouchTargetSizeCheck" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/btn_pay"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/expiry_date_layout"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="115dp"
+                android:background="@drawable/button"
+                android:layout_centerHorizontal="true"
+                android:padding="5dp"
+                android:text="Confirm Payment"
+                android:textColor="@android:color/white" />
+
+        </RelativeLayout>
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
