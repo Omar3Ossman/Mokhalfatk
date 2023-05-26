@@ -8,15 +8,18 @@
     tools:context=".UserActivity">
 
     <TextView
+        android:id="@+id/loginAsLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="240dp"
         android:text="Login as:"
         android:textColor="#000000"
-        app:layout_constraintBottom_toTopOf="@+id/btnUser"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginBottom="20sp"
-        android:textSize="20sp"/>
+        app:layout_constraintTop_toTopOf="parent" />
+
     <Button
         android:id="@+id/btnUser"
         android:layout_width="wrap_content"
@@ -24,10 +27,11 @@
         android:layout_centerHorizontal="true"
         android:background="@drawable/button"
         android:text="@string/User"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btnPO"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/loginAsLabel"
+        android:layout_marginTop="20sp" />
 
     <Button
         android:id="@+id/btnPO"
@@ -41,31 +45,34 @@
         app:layout_constraintTop_toBottomOf="@+id/btnUser" />
 
     <TextView
-        android:id="@+id/noAccount"
+        android:id="@+id/dontHaveAccountLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="264dp"
-        android:layout_marginEnd="189dp"
-        android:text="@string/noAccount"
-        android:layout_marginBottom="10sp"
-        android:layout_marginStart="10sp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="304dp"
+        android:text="Don't have an account?"
         android:textColor="#404040"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/signUpButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnPO" />
 
     <TextView
-        android:id="@+id/signUpButton"
+        android:id="@+id/signUpUserButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="188dp"
-        android:text="@string/signUp"
+        android:text="Sign Up as User"
         android:textColor="#2155cd"
-        app:layout_constraintBottom_toBottomOf="@+id/noAccount"
-        app:layout_constraintStart_toEndOf="@+id/noAccount"
-        app:layout_constraintTop_toTopOf="@+id/noAccount"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintStart_toEndOf="@+id/dontHaveAccountLabel"
+        app:layout_constraintTop_toTopOf="@+id/dontHaveAccountLabel"
+        android:layout_marginStart="8dp" />
 
+    <TextView
+        android:id="@+id/signUpOfficerButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sign Up as Officer"
+        android:textColor="#2155cd"
+        app:layout_constraintStart_toEndOf="@+id/signUpUserButton"
+        app:layout_constraintTop_toTopOf="@+id/dontHaveAccountLabel"
+        android:layout_marginStart="8dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

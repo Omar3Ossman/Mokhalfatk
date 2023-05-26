@@ -21,8 +21,17 @@ public class UserActivity extends AppCompatActivity {
         btnUser = findViewById(R.id.btnUser);
         btnPO = findViewById(R.id.btnPO);
 
-        TextView signUpTextView = findViewById(R.id.signUpButton);
-        signUpTextView.setOnClickListener(new View.OnClickListener() {
+        TextView signUpOfficer = findViewById(R.id.signUpOfficerButton);
+        signUpOfficer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(UserActivity.this, SignUpActivityOfficer.class);
+                startActivity(intent);
+            }
+        });
+
+        TextView signUpUser = findViewById(R.id.signUpUserButton);
+        signUpUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(UserActivity.this, SignUpActivityUser.class);

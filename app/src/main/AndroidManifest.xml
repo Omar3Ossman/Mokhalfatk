@@ -50,6 +50,13 @@
                 android:value="" />
         </activity>
         <activity
+            android:name=".OfficerProfileActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".SignUpActivityUser"
             android:exported="false">
             <meta-data
@@ -58,6 +65,20 @@
         </activity>
         <activity
             android:name=".SignInUserActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".SignInOfficerActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".SignUpActivityOfficer"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

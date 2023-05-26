@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -25,8 +26,9 @@ public class SignUpActivityOfficer extends AppCompatActivity {
     private EditText editTextPhoneNumber;
     private EditText editTextBadgeNumber;
     private TextView buttonSignUp;
-
     private FirebaseAuth firebaseAuth;
+    private TextView Register;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +49,14 @@ public class SignUpActivityOfficer extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 signUp();
+            }
+        });
+
+        Register.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SignUpActivityOfficer.this, SignInOfficerActivity.class);
+                startActivity(intent);
             }
         });
     }

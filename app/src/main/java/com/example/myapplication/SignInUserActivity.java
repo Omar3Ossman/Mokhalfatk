@@ -35,7 +35,6 @@ public class SignInUserActivity extends AppCompatActivity {
         setContentView(R.layout.activity_sign_in_user);
 
         backButton = findViewById(R.id.backButton);
-        signUpButton = findViewById(R.id.signUpButton);
         signInButton = findViewById(R.id.signInButton);
         email = findViewById(R.id.email);
         password = findViewById(R.id.password);
@@ -54,9 +53,14 @@ public class SignInUserActivity extends AppCompatActivity {
         signInButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                // Call the loginUser() method to handle sign-in
                 loginUser();
+
+                Intent intent = new Intent(SignInUserActivity.this, UserProfileActivity.class);
+                startActivity(intent);
             }
         });
+
     }
 
     private void loginUser() {
