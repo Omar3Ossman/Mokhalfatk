@@ -4,9 +4,9 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
-import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.InputType;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
@@ -18,7 +18,6 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
 public class SignInUserActivity extends AppCompatActivity {
 
@@ -28,9 +27,6 @@ public class SignInUserActivity extends AppCompatActivity {
     EditText email;
     EditText password;
     private FirebaseAuth mAuth;
-   // private ProgressDialog mLoadingBar;
-
-//law na2et eni ha-sign up as a user hadkhol el page di
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -38,13 +34,14 @@ public class SignInUserActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in_user);
 
-        backButton = (ImageView) findViewById(R.id.backButton);
-        signUpButton = (TextView) findViewById(R.id.signUpButton);
-        signInButton = (TextView) findViewById(R.id.signInButton);
-        email = (EditText) findViewById(R.id.email);
-        password = (EditText) findViewById(R.id.password);
+        backButton = findViewById(R.id.backButton);
+        signUpButton = findViewById(R.id.signUpButton);
+        signInButton = findViewById(R.id.signInButton);
+        email = findViewById(R.id.email);
+        password = findViewById(R.id.password);
         mAuth = FirebaseAuth.getInstance();
-        //mLoadingBar = new ProgressDialog(SignInUserActivity.this);
+
+        email.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS);
 
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,35 +51,42 @@ public class SignInUserActivity extends AppCompatActivity {
             }
         });
 
-
-
-        signInButton.setOnClickListener(view -> {
-            loginUser();
+        signInButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                loginUser();
+            }
         });
     }
+
     private void loginUser() {
-        String EmailLogin = email.getText().toString();
+        String emailLogin = email.getText().toString();
         String passwordLogin = password.getText().toString();
 
-        if (TextUtils.isEmpty(EmailLogin)) {
+        if (TextUtils.isEmpty(emailLogin)) {
             email.setError("Email cannot be empty");
             email.requestFocus();
-
-        } else if (TextUtils.isEmpty(passwordLogin)) {
-            password.setError("Email cannot be empty");
-            password.requestFocus();
-        }else{
-            mAuth.signInWithEmailAndPassword(EmailLogin, passwordLogin).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                @Override
-                public void onComplete(@NonNull Task<AuthResult> task) {
-                   if (task.isSuccessful()){
-                       Toast.makeText(SignInUserActivity.this, "User registered successfully", Toast.LENGTH_SHORT).show();
-                   }else{
-                       Toast.makeText(SignInUserActivity.this, "Registration Error: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-                   }
-                }
-            });
+            return;
         }
-    }
 
+        if (TextUtils.isEmpty(passwordLogin)) {
+            password.setError("Password cannot be empty");
+            password.requestFocus();
+            return;
+        }
+
+        mAuth.signInWithEmailAndPassword(emailLogin, passwordLogin).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if (task.isSuccessful()) {
+                    Toast.makeText(SignInUserActivity.this, "User signed in successfully", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(SignInUserActivity.this, UserProfileActivity.class);
+                    startActivity(intent);
+                    finish(); // Optional: Finish the current activity to prevent going back to the sign-in screen
+                } else {
+                    Toast.makeText(SignInUserActivity.this, "Sign-in Error: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+    }
 }

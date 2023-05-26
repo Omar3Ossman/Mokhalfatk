@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
-public class ProfileActivity extends AppCompatActivity {
+public class UserProfileActivity extends AppCompatActivity {
     ImageView backButton;
     ImageView viewViolationsButton;
 
@@ -20,7 +20,7 @@ public class ProfileActivity extends AppCompatActivity {
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(ProfileActivity.this, SignInUserActivity.class);
+                Intent intent = new Intent(UserProfileActivity.this, SignInUserActivity.class);
                 startActivity(intent);
             }
         });
@@ -28,7 +28,7 @@ public class ProfileActivity extends AppCompatActivity {
         viewViolationsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ProfileActivity.this, ViolationsActivity.class);
+                Intent intent = new Intent(UserProfileActivity.this, ViolationsActivity.class);
                 startActivity(intent);
             }
         });

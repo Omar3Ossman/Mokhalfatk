@@ -48,7 +48,7 @@ public class SignUpActivity extends AppCompatActivity {
         proceedButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(SignUpActivity.this, ProfileActivity.class);
+                Intent intent = new Intent(SignUpActivity.this, UserProfileActivity.class);
                 startActivity(intent);
             }
         });
@@ -92,7 +92,7 @@ public class SignUpActivity extends AppCompatActivity {
             password.setError("Email cannot be empty");
             password.requestFocus();
         }else{
-            mAuth.createUserWithEmailAndPassword(String.valueOf(EmailSignUp),Password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            mAuth.createUserWithEmailAndPassword(Email, Password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if(task.isSuccessful()){

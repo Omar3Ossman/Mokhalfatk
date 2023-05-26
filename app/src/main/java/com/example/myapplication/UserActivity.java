@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class UserActivity extends AppCompatActivity {
     Button btnUser;
@@ -20,6 +21,16 @@ public class UserActivity extends AppCompatActivity {
         btnUser = findViewById(R.id.btnUser);
         btnPO = findViewById(R.id.btnPO);
 
+        TextView signUpTextView = findViewById(R.id.signUpButton);
+        signUpTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(UserActivity.this, SignUpActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
         btnUser.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -32,7 +43,7 @@ public class UserActivity extends AppCompatActivity {
         btnPO.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(UserActivity.this, SignInPoliceActivity.class);
+                Intent intent = new Intent(UserActivity.this, SignInOfficerActivity.class);
                 startActivity(intent);
             }
         });
