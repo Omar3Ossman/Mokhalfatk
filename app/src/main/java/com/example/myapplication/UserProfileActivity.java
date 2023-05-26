@@ -40,22 +40,22 @@ public class UserProfileActivity extends AppCompatActivity {
             }
         });
 
-        signUpUserButton = findViewById(R.id.signUpUserButton);
-        signUpUserButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(UserProfileActivity.this, SignUpActivityUser.class);
-                startActivity(intent);
-            }
-        });
-
-        signUpOfficerButton = findViewById(R.id.signUpOfficerButton);
-        signUpOfficerButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(UserProfileActivity.this, SignUpActivityOfficer.class);
-                startActivity(intent);
-            }
-        });
+//        signUpUserButton = findViewById(R.id.signUpUserButton);
+//        signUpUserButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(UserProfileActivity.this, SignUpActivityUser.class);
+//                startActivity(intent);
+//            }
+//        });
+//
+//        signUpOfficerButton = findViewById(R.id.signUpOfficerButton);
+//        signUpOfficerButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(UserProfileActivity.this, SignUpActivityOfficer.class);
+//                startActivity(intent);
+//            }
+//        });
     }
 }
