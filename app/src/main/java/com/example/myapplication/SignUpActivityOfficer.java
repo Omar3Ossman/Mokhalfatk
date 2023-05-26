@@ -3,11 +3,9 @@ package com.example.myapplication;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -16,6 +14,10 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import Models.Officer;
 
 public class SignUpActivityOfficer extends AppCompatActivity {
     private EditText editTextFirstName;
@@ -28,6 +30,8 @@ public class SignUpActivityOfficer extends AppCompatActivity {
     private TextView buttonSignUp;
     private FirebaseAuth firebaseAuth;
     private TextView Register;
+    DatabaseReference databaseRef = FirebaseDatabase.getInstance().getReference().child("officers");
+
 
 
     @Override
@@ -40,7 +44,7 @@ public class SignUpActivityOfficer extends AppCompatActivity {
         editTextPassword = findViewById(R.id.password);
         editTextConfirmPassword = findViewById(R.id.confirmPassword);
         editTextPhoneNumber = findViewById(R.id.PhoneNumber);
-        editTextBadgeNumber = findViewById(R.id.BadgeNo);
+        editTextBadgeNumber = findViewById(R.id.LicensePlate);
         buttonSignUp = findViewById(R.id.proceedButton);
 
         firebaseAuth = FirebaseAuth.getInstance();
@@ -91,6 +95,8 @@ public class SignUpActivityOfficer extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
+                            String officerID = "";
+                            databaseRef.child(officerID).setValue(new Officer(firstName,lastName,email,badgeNumber,phoneNumber));
                             // Signup success, navigate to the next activity
                             Toast.makeText(SignUpActivityOfficer.this, "Signup successful", Toast.LENGTH_SHORT).show();
                             // TODO: Add code to navigate to the next activity

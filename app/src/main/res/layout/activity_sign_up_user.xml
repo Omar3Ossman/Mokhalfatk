@@ -73,7 +73,7 @@
         app:layout_constraintTop_toTopOf="@+id/backButton" />
 
     <EditText
-        android:id="@+id/BadgeNo"
+        android:id="@+id/LicensePlate"
         android:layout_width="310dp"
         android:layout_height="48dp"
         android:layout_marginTop="30dp"
@@ -100,7 +100,7 @@
         android:hint="@string/phoneHint"
         android:inputType="text|phone"
         android:paddingLeft="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/BadgeNo"
+        app:layout_constraintBottom_toTopOf="@+id/LicensePlate"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/password" />
@@ -177,7 +177,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/BadgeNo"
+        app:layout_constraintTop_toBottomOf="@+id/LicensePlate"
         app:layout_constraintVertical_bias="0.696" />
 
     <EditText
