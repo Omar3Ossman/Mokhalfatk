@@ -34,7 +34,7 @@ public class OfficerProfileActivity extends AppCompatActivity {
         scanLPR.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(OfficerProfileActivity.this, Camera.class);
+                Intent intent = new Intent(OfficerProfileActivity.this, CameraLPR.class);
                 startActivity(intent);
             }
         });
