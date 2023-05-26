@@ -16,6 +16,7 @@
     <string name="firstNameHint">First name</string>
     <string name="lastNameHint">Last name</string>
     <string name="emailHint">Email</string>
+    <string name="emailBadgeHint">Badge Email</string>
     <string name="phoneHint">Phone Number</string>
     <string name="passwordHint">Password</string>
     <string name="confirmPasswordHint">Confirm password</string>

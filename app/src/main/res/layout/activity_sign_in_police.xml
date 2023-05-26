@@ -24,13 +24,13 @@
 
 
     <EditText
-        android:id="@+id/email"
+        android:id="@+id/BadgeEmail"
         android:layout_width="250dp"
         android:layout_height="48dp"
         android:background="@drawable/edit_text_rounded"
         android:elevation="8dp"
         android:ems="10"
-        android:hint="@string/emailHint"
+        android:hint="@string/emailBadgeHint"
         android:inputType="phone"
         android:paddingLeft="10dp"
         app:layout_constraintBottom_toTopOf="@+id/signInButton"
@@ -54,7 +54,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/email"
+        app:layout_constraintTop_toBottomOf="@+id/BadgeEmail"
         app:layout_constraintVertical_bias="0.0" />
 
 

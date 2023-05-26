@@ -25,7 +25,7 @@ public class UserActivity extends AppCompatActivity {
         signUpTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(UserActivity.this, SignUpActivity.class);
+                Intent intent = new Intent(UserActivity.this, SignUpActivityUser.class);
                 startActivity(intent);
             }
         });

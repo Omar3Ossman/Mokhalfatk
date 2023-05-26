@@ -17,7 +17,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class SignUpActivity extends AppCompatActivity {
+public class SignUpActivityUser extends AppCompatActivity {
     private ImageView backButton;
     private TextView proceedButton;
     private EditText firstName, lastName, EmailSignUp, password, confirmPassword;
@@ -28,27 +28,27 @@ public class SignUpActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sign_up);
+        setContentView(R.layout.activity_sign_up_user);
 
         backButton = (ImageView) findViewById(R.id.backButton);
         proceedButton = (TextView) findViewById(R.id.proceedButton);
         firstName = (EditText) findViewById(R.id.firstName);
         lastName=(EditText) findViewById(R.id.lastName);
-        EmailSignUp=(EditText) findViewById(R.id.EmailSignUp);
+        EmailSignUp=(EditText) findViewById(R.id.BadgeEmailSignup);
         password=(EditText) findViewById(R.id.password);
         confirmPassword=(EditText) findViewById(R.id.confirmPassword);
 
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(SignUpActivity.this, SignInUserActivity.class);
+                Intent intent = new Intent(SignUpActivityUser.this, SignInUserActivity.class);
                 startActivity(intent);
             }
         });
         proceedButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(SignUpActivity.this, UserProfileActivity.class);
+                Intent intent = new Intent(SignUpActivityUser.this, UserProfileActivity.class);
                 startActivity(intent);
             }
         });
@@ -96,10 +96,10 @@ public class SignUpActivity extends AppCompatActivity {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if(task.isSuccessful()){
-                        Toast.makeText(SignUpActivity.this, "User registered successfully", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(SignUpActivity.this, UserActivity.class));
+                        Toast.makeText(SignUpActivityUser.this, "User registered successfully", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(SignUpActivityUser.this, UserActivity.class));
                     }else{
-                        Toast.makeText(SignUpActivity.this, "Registration Error: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(SignUpActivityUser.this, "Registration Error: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 }
             });

@@ -50,7 +50,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".SignUpActivity"
+            android:name=".SignUpActivityUser"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

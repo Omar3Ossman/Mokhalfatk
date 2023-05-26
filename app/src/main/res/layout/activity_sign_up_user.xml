@@ -17,67 +17,52 @@
         android:elevation="8dp"
         android:src="@drawable/ic_back"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
 
-
-    <ImageView
-        android:id="@+id/avatar_image"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginBottom="30dp"
-        android:background="@drawable/circle_image_background"
-        android:elevation="8dp"
-        android:padding="20dp"
-        android:scaleType="centerCrop"
-        android:src="@drawable/avatar"
-        app:layout_constraintBottom_toTopOf="@+id/firstName"
-        app:layout_constraintEnd_toEndOf="@+id/lastName"
-        app:layout_constraintStart_toStartOf="@+id/firstName"
-        app:layout_constraintTop_toBottomOf="@+id/profile" />
 
     <TextView
-        android:id="@+id/scanLPR"
+        android:id="@+id/proceedButton"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginStart="25dp"
         android:layout_marginEnd="25dp"
+        android:layout_marginBottom="30dp"
+        android:layout_marginTop="50dp"
         android:background="@drawable/button"
         android:elevation="8dp"
         android:fontFamily="sans-serif"
-        android:layout_marginBottom="20dp"
         android:gravity="center"
-        android:text="@string/scanLPR"
+        android:text="@string/register"
         android:textColor="@color/white"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profile"
-        app:layout_constraintVertical_bias="0.881" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/background" />
 
     <TextView
-        android:id="@+id/profile"
+        android:id="@+id/textView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="monospace"
         android:gravity="center"
-        android:text="@string/profile"
+        android:text="@string/signUp"
         android:textColor="@color/black"
         android:textSize="22sp"
         android:textStyle="bold"
@@ -88,11 +73,44 @@
         app:layout_constraintTop_toTopOf="@+id/backButton" />
 
     <EditText
+        android:id="@+id/BadgeNo"
+        android:layout_width="310dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/edit_text_rounded"
+        android:elevation="8dp"
+        android:ems="10"
+        android:hint="@string/licenseplate"
+        android:inputType="text"
+        android:paddingLeft="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/confirmPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/PhoneNumber"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <EditText
+        android:id="@+id/PhoneNumber"
+        android:layout_width="310dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/edit_text_rounded"
+        android:elevation="8dp"
+        android:ems="10"
+        android:hint="@string/phoneHint"
+        android:inputType="text|phone"
+        android:paddingLeft="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/BadgeNo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/password" />
+
+    <EditText
         android:id="@+id/firstName"
         android:layout_width="150dp"
         android:layout_height="48dp"
         android:layout_marginLeft="50dp"
-        android:layout_marginTop="128dp"
+        android:layout_marginTop="60dp"
         android:background="@drawable/edit_text_rounded"
         android:elevation="8dp"
         android:ems="10"
@@ -102,7 +120,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profile" />
+        app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
     <EditText
         android:id="@+id/BadgeEmailSignup"
@@ -118,12 +136,12 @@
         android:inputType="textEmailAddress"
         android:paddingLeft="10dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.247"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/firstName" />
 
     <EditText
-        android:id="@+id/profilePhone"
+        android:id="@+id/password"
         android:layout_width="310dp"
         android:layout_height="48dp"
         android:layout_marginLeft="50dp"
@@ -132,9 +150,10 @@
         android:background="@drawable/edit_text_rounded"
         android:elevation="8dp"
         android:ems="10"
-        android:hint="@string/phoneHint"
-        android:inputType="phone"
+        android:hint="@string/passwordHint"
+        android:inputType="textPassword"
         android:paddingLeft="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/PhoneNumber"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
@@ -142,24 +161,24 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <EditText
-        android:id="@+id/badgeNumber"
+        android:id="@+id/confirmPassword"
         android:layout_width="310dp"
         android:layout_height="48dp"
         android:layout_marginLeft="50dp"
         android:layout_marginTop="30dp"
         android:layout_marginRight="50dp"
         android:background="@drawable/edit_text_rounded"
-        android:ems="10"
         android:elevation="8dp"
-        android:hint="Badge Number"
-        android:inputType="text"
+        android:ems="10"
+        android:hint="@string/confirmPasswordHint"
+        android:inputType="textPassword"
         android:paddingLeft="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/scanLPR"
+        app:layout_constraintBottom_toTopOf="@+id/proceedButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profilePhone"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/BadgeNo"
+        app:layout_constraintVertical_bias="0.696" />
 
     <EditText
         android:id="@+id/lastName"
