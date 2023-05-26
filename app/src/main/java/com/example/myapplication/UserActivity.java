@@ -11,7 +11,7 @@ public class UserActivity extends AppCompatActivity {
     Button btnUser;
     Button btnPO;
 
-//Login as, el dakhel da user wala police
+//Login as User or Police Officer
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

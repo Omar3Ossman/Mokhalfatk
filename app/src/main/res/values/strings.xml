@@ -3,6 +3,9 @@
     <string name="moto">Streamline your traffic violation payments.
         Your one-stop-shop for paying traffic violations</string>
     <string name="getStarted">Get Started</string>
+    <string name="congratulations">Congratulations!</string>
+    <string name="generatecode">Code Applies for the next 24 hours</string>
+    <string name="Completed">Return to homepage</string>
     <string name="findYour">Find your</string>
     <string name="signIn">Sign In</string>
     <string name="noAccount">Don\'t have an account?</string>
@@ -16,7 +19,9 @@
     <string name="confirmPasswordHint">Confirm password</string>
     <string name="dateOfBirthHint">Date of birth</string>
     <string name="nationalID">National ID</string>
-    <string name="accountSet">Your account is set and ready to use.</string>
+    <string name="payment">Your payment has been successful.</string>
+    <string name="codegenerated">Generated Code is here.</string>
+    <string name="proceed">Proceed</string>
     <string name="save">Save</string>
     <string name="profile">Profile</string>
     <string name="viewviolation">View Violations</string>

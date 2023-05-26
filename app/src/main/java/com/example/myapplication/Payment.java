@@ -2,10 +2,10 @@ package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class Payment extends AppCompatActivity {
     TextView fawry, card;
@@ -15,18 +15,20 @@ public class Payment extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_payment);
 
-        fawry = findViewById(R.id.fawry);
+        fawry = findViewById(R.id.btnPayWithFawry);
         fawry.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Please fill in your code", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(Payment.this, GenerateCode.class);
+                startActivity(intent);
             }
         });
-        card = findViewById(R.id.card);
+        card = findViewById(R.id.btnPayWithCard);
         card.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Please fill in your card information", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(Payment.this, Card.class);
+                startActivity(intent);
             }
         });
     }
