@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.InputType;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -18,6 +19,8 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+
+import java.util.Objects;
 
 public class SignInUserActivity extends AppCompatActivity {
 
@@ -55,9 +58,9 @@ public class SignInUserActivity extends AppCompatActivity {
             public void onClick(View view) {
                 // Call the loginUser() method to handle sign-in
                 loginUser();
-
-                Intent intent = new Intent(SignInUserActivity.this, UserProfileActivity.class);
-                startActivity(intent);
+//
+//                Intent intent = new Intent(SignInUserActivity.this, UserProfileActivity.class);
+//                startActivity(intent);
             }
         });
 
@@ -88,6 +91,7 @@ public class SignInUserActivity extends AppCompatActivity {
                     startActivity(intent);
                     finish(); // Optional: Finish the current activity to prevent going back to the sign-in screen
                 } else {
+                    Objects.requireNonNull(task.getException()).printStackTrace();
                     Toast.makeText(SignInUserActivity.this, "Sign-in Error: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                 }
             }

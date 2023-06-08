@@ -56,13 +56,13 @@ public class SignUpActivityOfficer extends AppCompatActivity {
             }
         });
 
-        Register.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(SignUpActivityOfficer.this, SignInOfficerActivity.class);
-                startActivity(intent);
-            }
-        });
+//        Register.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(SignUpActivityOfficer.this, SignInOfficerActivity.class);
+//                startActivity(intent);
+//            }
+//        });
     }
 
     private void signUp() {
@@ -99,7 +99,8 @@ public class SignUpActivityOfficer extends AppCompatActivity {
                             databaseRef.child(officerID).setValue(new Officer(firstName,lastName,email,badgeNumber,phoneNumber));
                             // Signup success, navigate to the next activity
                             Toast.makeText(SignUpActivityOfficer.this, "Signup successful", Toast.LENGTH_SHORT).show();
-                            // TODO: Add code to navigate to the next activity
+                            Intent intent = new Intent(SignUpActivityOfficer.this, SignInOfficerActivity.class);
+                            startActivity(intent);
                         } else {
                             // Signup failed, display error message
                             Toast.makeText(SignUpActivityOfficer.this, "Signup failed", Toast.LENGTH_SHORT).show();

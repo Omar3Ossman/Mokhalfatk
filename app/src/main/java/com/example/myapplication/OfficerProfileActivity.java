@@ -35,6 +35,7 @@ public class OfficerProfileActivity extends AppCompatActivity {
         TextView phoneNumberTextView = findViewById(R.id.profilePhone);
         TextView badgeNumberTextView = findViewById(R.id.badgeNumber);
         TextView emailTextView = findViewById(R.id.BadgeEmailSignup);
+        mAuth = FirebaseAuth.getInstance();
         String officerId = mAuth.getCurrentUser().getUid();
         DatabaseReference databaseRef = FirebaseDatabase.getInstance().getReference().child("officers").child(officerId);
         databaseRef.addListenerForSingleValueEvent(new ValueEventListener() {

@@ -55,13 +55,13 @@ public class SignUpActivityUser extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        proceedButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(SignUpActivityUser.this, UserProfileActivity.class);
-                startActivity(intent);
-            }
-        });
+//        proceedButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = new Intent(SignUpActivityUser.this, UserProfileActivity.class);
+//                startActivity(intent);
+//            }
+//        });
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -123,7 +123,7 @@ public class SignUpActivityUser extends AppCompatActivity {
                             public void onComplete(@NonNull Task<Void> task) {
                                 if (task.isSuccessful()) {
                                     Toast.makeText(SignUpActivityUser.this, "User registered successfully", Toast.LENGTH_SHORT).show();
-                                    startActivity(new Intent(SignUpActivityUser.this, UserActivity.class));
+                                    startActivity(new Intent(SignUpActivityUser.this, SignInUserActivity.class));
                                 } else {
                                     Toast.makeText(SignUpActivityUser.this, "Failed to register user", Toast.LENGTH_SHORT).show();
                                     Log.d("createuserErr:",task.getException().getMessage());

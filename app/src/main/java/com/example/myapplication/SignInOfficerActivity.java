@@ -51,14 +51,14 @@ public class SignInOfficerActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        TextView signInTextView = findViewById(R.id.signInButton);
-        signInTextView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(SignInOfficerActivity.this, OfficerProfileActivity.class);
-                startActivity(intent);
-            }
-        });
+//        TextView signInTextView = findViewById(R.id.signInButton);
+////        signInTextView.setOnClickListener(new View.OnClickListener() {
+////            @Override
+////            public void onClick(View v) {
+////                Intent intent = new Intent(SignInOfficerActivity.this, OfficerProfileActivity.class);
+////                startActivity(intent);
+////            }
+////        });
     }
 
     private void login() {
@@ -81,7 +81,8 @@ public class SignInOfficerActivity extends AppCompatActivity {
                             if (task.isSuccessful()) {
                                 // Authentication success, navigate to the next activity
                                 Toast.makeText(SignInOfficerActivity.this, "Login successful", Toast.LENGTH_SHORT).show();
-                                // TODO: Add code to navigate to the next activity
+                                Intent intent = new Intent(SignInOfficerActivity.this, OfficerProfileActivity.class);
+                                startActivity(intent);
                             } else {
                                 // Authentication failed, display error message
                                 Toast.makeText(SignInOfficerActivity.this, "Authentication failed, Incorrect password", Toast.LENGTH_SHORT).show();
