@@ -95,8 +95,8 @@ public class SignUpActivityOfficer extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            String officerID = "";
-                            databaseRef.child(officerID).setValue(new Officer(firstName,lastName,email,badgeNumber,phoneNumber));
+                            String officerID = task.getResult().getUser().getUid();
+                            databaseRef.child(officerID).setValue(new Officer(firstName,lastName,phoneNumber,badgeNumber,email));
                             // Signup success, navigate to the next activity
                             Toast.makeText(SignUpActivityOfficer.this, "Signup successful", Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(SignUpActivityOfficer.this, SignInOfficerActivity.class);
