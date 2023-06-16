@@ -23,6 +23,7 @@ import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -41,6 +42,7 @@ public class CameraLPR extends AppCompatActivity {
     ImageView selectedImage;
     Button cameraBtn;
     private String currentPhotoPath;
+    ImageButton back;
 
 
     @Override
@@ -49,7 +51,15 @@ public class CameraLPR extends AppCompatActivity {
         setContentView(R.layout.activity_camera);
         selectedImage = findViewById(R.id.imageView);
         cameraBtn = findViewById(R.id.camBtn);
+        back = (ImageButton) findViewById(R.id.backButton);
 
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(CameraLPR.this, OfficerProfileActivity.class);
+                startActivity(intent);
+            }
+        });
 
         cameraBtn.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -6,8 +6,13 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.util.Log;
+import android.view.View;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -27,9 +32,9 @@ import Models.Violations;
 public class ViolationsActivity extends AppCompatActivity {
     RecyclerView.Adapter violationAdapter;
     RecyclerView violationsList;
+    private ImageButton back;
 
     FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-
     String userId = user.getUid();
 
     @SuppressLint("MissingInflatedId")
@@ -38,6 +43,14 @@ public class ViolationsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_violations);
 
+        back = (ImageButton) findViewById(R.id.backButton);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ViolationsActivity.this, UserProfileActivity.class);
+                startActivity(intent);
+            }
+        });
 
 
         violationsList = findViewById(R.id.recyclerViolations);

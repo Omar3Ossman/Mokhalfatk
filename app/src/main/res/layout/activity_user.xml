@@ -7,42 +7,74 @@
     android:background="@drawable/background"
     tools:context=".UserActivity">
 
-    <TextView
-        android:id="@+id/loginAsLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="240dp"
-        android:text="Login as:"
-        android:textColor="#000000"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.49"
+    <ImageButton
+        android:id="@+id/backButton1"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"
+        android:alpha="0.7"
+        android:background="@drawable/circle_shape"
+        android:elevation="5dp"
+        android:src="@drawable/ic_back"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/btnUser"
+    <TextView
+        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:background="@drawable/button"
-        android:text="@string/User"
+        android:text="Login As:"
+        android:textColor="#063970"
+        android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/btnPO"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/loginAsLabel"
-        android:layout_marginTop="20sp" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.95" />
 
-    <Button
-        android:id="@+id/btnPO"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10sp"
-        android:background="@drawable/button"
-        android:text="@string/Police"
+    <ImageView
+        android:id="@+id/ImgUser"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="15dp"
+        android:foregroundGravity="center_horizontal"
+        android:elevation="8dp"
+        android:padding="20dp"
+        android:src="@drawable/male"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.74" />
+
+    <View
+        android:layout_width="300dp"
+        android:layout_height="2dp"
+        android:background="#063970"
+        app:layout_constraintBottom_toTopOf="@+id/ImgUser"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnUser" />
+        app:layout_constraintTop_toTopOf="@+id/ImgUser" />
+
+    <ImageView
+        android:id="@+id/btnPO"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="32dp"
+        android:foregroundGravity="center_horizontal"
+        android:src="@drawable/badge"
+        android:text="@string/Police"
+        app:layout_constraintBottom_toTopOf="@+id/ImgUser"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.602"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/dontHaveAccountLabel"
@@ -52,9 +84,9 @@
         android:layout_marginTop="256dp"
         android:text="Don't have an account?"
         android:textColor="#404040"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnPO" />
-
     <TextView
         android:id="@+id/signUpUserButton"
         android:layout_width="wrap_content"
@@ -74,5 +106,4 @@
         app:layout_constraintStart_toEndOf="@+id/signUpUserButton"
         app:layout_constraintTop_toTopOf="@+id/dontHaveAccountLabel"
         android:layout_marginStart="8dp" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -2,14 +2,39 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@drawable/background"
     android:layout_height="match_parent"
     tools:context=".Payment">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Payment Method"
+        android:textSize="20sp"
+        android:textColor="#063970"
+        app:layout_constraintBottom_toTopOf="@+id/fawry_pic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/backButton1"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"
+        android:alpha="0.7"
+        android:background="@drawable/circle_shape"
+        android:elevation="5dp"
+        android:src="@drawable/ic_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/fawry_pic"
         android:layout_width="wrap_content"
         android:layout_height="300dp"
         android:padding="5dp"
+        android:layout_marginTop="70dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -17,28 +42,34 @@
 
     <TextView
         android:id="@+id/btnPayWithFawry"
-        android:layout_width="match_parent"
+        android:layout_width="170dp"
         android:layout_height="50dp"
         android:background="@drawable/button"
-        android:padding="5dp"
+        android:padding="15dp"
+        android:textSize="16sp"
         android:text="Pay with Fawry"
+        android:textAlignment="center"
         android:textColor="@android:color/white"
         app:layout_constraintBottom_toTopOf="@+id/btnPayWithCard"
-        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/fawry_pic" />
 
     <TextView
         android:id="@+id/btnPayWithCard"
-        android:layout_width="match_parent"
+        android:layout_width="170dp"
         android:layout_height="50dp"
         android:layout_marginBottom="124dp"
         android:background="@drawable/button"
         android:gravity="center"
         android:padding="5dp"
+        android:textSize="16sp"
         android:text="Pay with Card"
         android:textColor="@android:color/white"
         app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fawry_pic"
         tools:srcCompat="@drawable/button" />
 
 
