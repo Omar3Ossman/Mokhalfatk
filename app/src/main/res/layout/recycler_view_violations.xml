@@ -35,7 +35,36 @@
                 tools:srcCompat="@drawable/money" />
 
             <TextView
-                android:id="@+id/name"
+                android:id="@+id/violationId"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="300"
+                android:textColor="@color/black"
+                android:visibility="invisible"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginStart="50dp"
+                app:layout_constraintBottom_toBottomOf="@+id/status"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/status"
+                app:layout_constraintTop_toTopOf="@+id/status" />
+
+            <TextView
+                android:id="@+id/fee"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="300"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginStart="50dp"
+                app:layout_constraintBottom_toBottomOf="@+id/status"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/status"
+                app:layout_constraintTop_toTopOf="@+id/status" />
+
+            <TextView
+                android:id="@+id/ticketType"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
@@ -51,7 +80,7 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.19999999" />
             <TextView
-                android:id="@+id/paid"
+                android:id="@+id/status"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Paid"
@@ -62,7 +91,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.1"
                 app:layout_constraintStart_toEndOf="@+id/fawry_pic"
-                app:layout_constraintTop_toBottomOf="@id/name"
+                app:layout_constraintTop_toBottomOf="@id/ticketType"
                 app:layout_constraintVertical_bias="0.32999998" />
 
 

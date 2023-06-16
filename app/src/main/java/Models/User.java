@@ -1,5 +1,7 @@
 package Models;
 
+import java.util.ArrayList;
+
 public class User {
 
         private String firstName;
@@ -9,9 +11,27 @@ public class User {
         private String licensePlateNumber;
 
 
+        private ArrayList<Violations> violations=new ArrayList<>();
+
         public User() {
         }
 
+    public ArrayList<Violations> getViolations() {
+        return violations;
+    }
+
+    public void setViolations(ArrayList<Violations> violations) {
+        this.violations = violations;
+    }
+
+    public User(String firstName, String lastName, String phoneNumber, String email, String licensePlateNumber, ArrayList<Violations> violations) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+        this.licensePlateNumber = licensePlateNumber;
+        this.violations = violations;
+    }
 
     public User(String firstName, String lastName, String phoneNumber, String email, String licensePlateNumber) {
             this.firstName = firstName;
