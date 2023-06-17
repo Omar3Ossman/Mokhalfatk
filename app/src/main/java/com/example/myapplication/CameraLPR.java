@@ -14,6 +14,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -28,7 +29,7 @@ public class CameraLPR extends AppCompatActivity {
     public static final int CAMERA_REQUEST_CODE = 102;
     private static final int REQUEST_IMAGE_CAPTURE = 103;
     ImageView selectedImage;
-    Button cameraBtn;
+    TextView cameraBtn;
     private String currentPhotoPath;
     ImageButton back;
 

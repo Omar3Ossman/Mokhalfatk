@@ -14,6 +14,8 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.HashMap;
+
 public class Card extends AppCompatActivity {
     ImageButton back;
     FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
@@ -47,7 +49,9 @@ public class Card extends AppCompatActivity {
         buttonPayCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                violationsRef.child("status").setValue("paid");
+                HashMap<String,Object> updates = new HashMap<>();
+                updates.put("status","PAID");
+                violationsRef.updateChildren(updates);
                 Intent intent = new Intent(Card.this, ViolationsActivity.class);
                 startActivity(intent);
             }
