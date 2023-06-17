@@ -87,4 +87,5 @@ public class ViolationsActivity extends AppCompatActivity {
         });
 
     }
+
 }

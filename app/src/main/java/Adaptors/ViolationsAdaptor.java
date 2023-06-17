@@ -5,6 +5,7 @@ import com.example.myapplication.R;
 
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,7 +23,9 @@ import com.google.firebase.database.ValueEventListener;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.io.Console;
 import java.util.ArrayList;
+import java.util.List;
 
 import Models.Violations;
 
@@ -69,13 +72,20 @@ public class ViolationsAdaptor extends RecyclerView.Adapter<ViolationsAdaptor.Vi
                     violationsRef.addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
-//                            if(snapshot.hasChild(item.getId())){
-                                String violationId = item.getId();
-//
+                            List<DataSnapshot> violationList = new ArrayList<>();
+                            for (DataSnapshot violationSnapshot : snapshot.getChildren()) {
+                                violationList.add(violationSnapshot);
+                            }
+
+                            int position = holder.getAdapterPosition();
+                            if (position != RecyclerView.NO_POSITION && position < violationList.size()) {
+                                DataSnapshot violationSnapshot = violationList.get(position);
+                                String violationId = violationSnapshot.getKey(); // Get the ID of the clicked violation
+                                Log.d("print", violationId);
                                 Intent intent = new Intent(v.getContext(), Payment.class);
-                                intent.putExtra("Violation ID", violationId);
+                                intent.putExtra("ViolationID", violationId);
                                 v.getContext().startActivity(intent);
-//                            }
+                            }
                         }
 
                         @Override

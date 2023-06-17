@@ -75,7 +75,7 @@
 
 
     <TextView
-        android:id="@+id/btn_pay"
+        android:id="@+id/btnPayFawry"
         android:layout_width="300dp"
         android:layout_height="40dp"
         android:background="@drawable/button"

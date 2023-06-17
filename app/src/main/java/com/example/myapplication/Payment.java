@@ -37,7 +37,7 @@ public class Payment extends AppCompatActivity {
             }
         });
 
-        String violationID = getIntent().getStringExtra("Violation ID");
+        String violationID = getIntent().getStringExtra("ViolationID");
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference violationsRef = database.getReference("users/" + userId + "/violations/" + violationID);
@@ -49,8 +49,8 @@ public class Payment extends AppCompatActivity {
         fawry.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                violationsRef.child("status").setValue("paid");
                 Intent intent = new Intent(Payment.this, GenerateCode.class);
+                intent.putExtra("ViolationID", violationID);
                 startActivity(intent);
             }
         });
@@ -59,6 +59,7 @@ public class Payment extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Payment.this, Card.class);
+                intent.putExtra("ViolationID", violationID);
                 startActivity(intent);
             }
         });
