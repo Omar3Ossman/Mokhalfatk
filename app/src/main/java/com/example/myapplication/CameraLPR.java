@@ -1,38 +1,26 @@
 package com.example.myapplication;
 
-import static com.example.myapplication.R.id.camBtn;
+import static com.example.myapplication.R.id.Camera;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.annotation.Nullable;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
-import androidx.core.content.FileProvider;
-
-import android.Manifest;
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.Toast;
 
-import com.google.firebase.database.core.Tag;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.FileProvider;
 
 import java.io.File;
 import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 
 public class CameraLPR extends AppCompatActivity {
@@ -45,12 +33,13 @@ public class CameraLPR extends AppCompatActivity {
     ImageButton back;
 
 
+    @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_camera);
         selectedImage = findViewById(R.id.imageView);
-        cameraBtn = findViewById(R.id.camBtn);
+        cameraBtn = findViewById(Camera);
         back = (ImageButton) findViewById(R.id.backButton);
 
         back.setOnClickListener(new View.OnClickListener() {

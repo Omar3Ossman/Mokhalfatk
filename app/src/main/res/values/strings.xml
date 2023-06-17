@@ -16,7 +16,7 @@
     <string name="firstNameHint">First name</string>
     <string name="lastNameHint">Last name</string>
     <string name="emailHint">Email</string>
-    <string name="emailBadgeHint">Badge Email</string>
+    <string name="emailBadgeHint">Badge Number</string>
     <string name="phoneHint">Phone Number</string>
     <string name="passwordHint">Password</string>
     <string name="confirmPasswordHint">Confirm password</string>
@@ -30,5 +30,6 @@
     <string name="viewviolation">View Violations</string>
     <string name="Police">Police Officer</string>
     <string name="User">User</string>
+    <string name="Camera">Take A Photo</string>
     <string name="badge_number">Badge Number</string>
 </resources>

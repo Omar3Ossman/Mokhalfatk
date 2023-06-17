@@ -33,17 +33,21 @@
         app:srcCompat="@drawable/ic_launcher_background"
         />
 
-    <Button
-        android:id="@+id/camBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="Camera"
-        app:flow_horizontalBias="0.33"
+    <TextView
+        android:id="@+id/Camera"
+        android:layout_width="175dp"
+        android:layout_height="50dp"
+        android:background="@drawable/button"
+        android:elevation="8dp"
+        android:fontFamily="sans-serif"
+        android:gravity="center"
+        android:text="@string/Camera"
+        android:textColor="@color/white"
+        android:textSize="19sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
