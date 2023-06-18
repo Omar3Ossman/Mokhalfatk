@@ -6,6 +6,29 @@
     android:layout_height="match_parent"
     tools:context=".SignInUserActivity">
 
+    <androidx.cardview.widget.CardView
+        android:id="@+id/Card"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginBottom="16dp"
+        android:alpha="0.9"
+        app:cardBackgroundColor="#6FA8DC"
+        app:cardElevation="5dp"
+        app:layout_constraintBottom_toTopOf="@+id/profile"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_editor_absoluteX="0dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="15dp"
+            android:fontFamily="monospace"
+            android:text="Officer info"
+            android:textColor="#000000"
+            android:textSize="24sp" />
+    </androidx.cardview.widget.CardView>
     <ImageButton
         android:id="@+id/backButton"
         android:layout_width="48dp"
@@ -16,8 +39,8 @@
         android:background="@drawable/circle_shape"
         android:elevation="8dp"
         android:src="@drawable/ic_back"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/Card"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
     <ImageView

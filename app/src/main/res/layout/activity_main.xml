@@ -30,8 +30,8 @@
 
     <ImageView
         android:id="@+id/logo_background"
-        android:layout_width="400dp"
-        android:layout_height="400dp"
+        android:layout_width="392dp"
+        android:layout_height="391dp"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -39,7 +39,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.271"
-        app:srcCompat="@drawable/logo_transparent" />
+        app:srcCompat="@drawable/logo1" />
 
     <TextView
         android:id="@+id/slogan"

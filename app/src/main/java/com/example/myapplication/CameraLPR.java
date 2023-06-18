@@ -45,7 +45,7 @@ public class CameraLPR extends AppCompatActivity {
     private String currentPhotoPath;
     ImageButton back;
     TextView imageResponse;
-
+    TextView SelectViolations;
 
     @SuppressLint({"WrongViewCast", "MissingInflatedId"})
     @Override
@@ -61,6 +61,14 @@ public class CameraLPR extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(CameraLPR.this, OfficerProfileActivity.class);
+                startActivity(intent);
+            }
+        });
+        SelectViolations = findViewById(R.id.SelectViolations);
+        SelectViolations.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(CameraLPR.this, PickViolation.class);
                 startActivity(intent);
             }
         });

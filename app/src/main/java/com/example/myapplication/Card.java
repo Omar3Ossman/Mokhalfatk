@@ -31,6 +31,14 @@ public class Card extends AppCompatActivity {
         setContentView(R.layout.activity_card);
 
         buttonPayCard = findViewById(R.id.btnPayCard);
+        buttonPayCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Card.this, Congrats.class);
+                startActivity(intent);
+            }
+        });
+
 
         String violationID = getIntent().getStringExtra("ViolationID");
 

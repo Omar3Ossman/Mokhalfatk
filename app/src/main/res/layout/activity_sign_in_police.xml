@@ -83,10 +83,10 @@
 
     <ImageView
         android:id="@+id/logo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="405dp"
+        android:layout_height="355dp"
         android:gravity="center"
-        android:src="@drawable/pinterest_profile_image"
+        android:src="@drawable/logo1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
