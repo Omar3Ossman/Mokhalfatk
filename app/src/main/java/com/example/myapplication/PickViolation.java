@@ -26,7 +26,10 @@ public class PickViolation extends AppCompatActivity implements AdapterView.OnIt
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Success", Toast.LENGTH_SHORT).show();
+                Intent intent=new Intent(PickViolation.this,OfficerProfileActivity.class);
+                startActivity(intent);
+                finish();
+                Toast.makeText(getApplicationContext(), "Violation Submitted Successfully.", Toast.LENGTH_SHORT).show();
             }
         });
 
