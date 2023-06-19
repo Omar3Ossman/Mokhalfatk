@@ -1,10 +1,7 @@
 package com.example.myapplication;
 
-import static com.example.myapplication.R.id.scanLPR;
-
 import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.graphics.Camera;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -20,7 +17,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class OfficerProfileActivity extends AppCompatActivity {
-    ImageView backButton;
     TextView scanLPR;
     private FirebaseAuth mAuth;
 
@@ -66,15 +62,6 @@ public class OfficerProfileActivity extends AppCompatActivity {
         });
 
 
-        backButton = (ImageView) findViewById(R.id.backButton);
-
-        backButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(OfficerProfileActivity.this, SignInOfficerActivity.class);
-                startActivity(intent);
-            }
-        });
         scanLPR = findViewById(R.id.scanLPR);
         scanLPR.setOnClickListener(new View.OnClickListener() {
             @Override

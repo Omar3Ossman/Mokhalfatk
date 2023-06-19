@@ -29,19 +29,6 @@
             android:textColor="#000000"
             android:textSize="24sp" />
     </androidx.cardview.widget.CardView>
-    <ImageButton
-        android:id="@+id/backButton"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="30dp"
-        android:alpha="0.7"
-        android:background="@drawable/circle_shape"
-        android:elevation="8dp"
-        android:src="@drawable/ic_back"
-        app:layout_constraintTop_toBottomOf="@+id/Card"
-        app:layout_constraintStart_toStartOf="parent" />
-
 
     <ImageView
         android:id="@+id/avatar_image"
@@ -104,11 +91,11 @@
         android:textColor="@color/black"
         android:textSize="22sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/backButton"
+        android:layout_marginTop="5dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.084"
-        app:layout_constraintStart_toEndOf="@+id/backButton"
-        app:layout_constraintTop_toTopOf="@+id/backButton" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Card" />
 
     <EditText
         android:id="@+id/firstName"

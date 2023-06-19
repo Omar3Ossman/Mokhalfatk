@@ -18,7 +18,6 @@ import com.google.firebase.database.ValueEventListener;
 
 
 public class UserProfileActivity extends AppCompatActivity {
-    ImageView backButton;
     ImageView viewViolationsButton;
     TextView signUpUserButton;
     TextView signUpOfficerButton;
@@ -66,15 +65,6 @@ public class UserProfileActivity extends AppCompatActivity {
             }
         });
 
-        backButton = findViewById(R.id.backButton);
-
-        backButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(UserProfileActivity.this, SignInUserActivity.class);
-                startActivity(intent);
-            }
-        });
 
         viewViolationsButton = findViewById(R.id.imageView3);
         viewViolationsButton.setOnClickListener(new View.OnClickListener() {
