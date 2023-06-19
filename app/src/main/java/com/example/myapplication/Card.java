@@ -17,12 +17,12 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.HashMap;
 
 public class Card extends AppCompatActivity {
-    ImageButton back;
+    //ImageButton back;
     FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
     String userId = user.getUid();
 
-    TextView buttonPayCard;
+    TextView buttonPayCard,cancel;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -45,14 +45,14 @@ public class Card extends AppCompatActivity {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference violationsRef = database.getReference("users/" + userId + "/violations/" + violationID);
 
-        back = (ImageButton) findViewById(R.id.backButton);
+        /*back = (ImageButton) findViewById(R.id.backButton);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(Card.this, Payment.class);
                 startActivity(intent);
             }
-        });
+        });*/
 
         buttonPayCard.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,6 +61,14 @@ public class Card extends AppCompatActivity {
                 updates.put("status","PAID");
                 violationsRef.updateChildren(updates);
                 Intent intent = new Intent(Card.this, ViolationsActivity.class);
+                startActivity(intent);
+            }
+        });
+        cancel=findViewById(R.id.cancelpym);
+        cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(Card.this,ViolationsActivity.class);
                 startActivity(intent);
             }
         });

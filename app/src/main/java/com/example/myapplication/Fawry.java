@@ -18,7 +18,7 @@ import java.util.HashMap;
 
 public class Fawry extends AppCompatActivity {
     ImageButton back;
-    TextView buttonPay;
+    TextView buttonPay,cancel;
 
     FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
@@ -56,5 +56,15 @@ public class Fawry extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        cancel=findViewById(R.id.cancelpym);
+        cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(Fawry.this,ViolationsActivity.class);
+                startActivity(intent);
+
+            }
+        });
+
     }
 }

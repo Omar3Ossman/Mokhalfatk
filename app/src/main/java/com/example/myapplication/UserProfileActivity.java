@@ -19,8 +19,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class UserProfileActivity extends AppCompatActivity {
     ImageView viewViolationsButton;
-    TextView signUpUserButton;
-    TextView signUpOfficerButton;
+    TextView signUpUserButton,signUpOfficerButton,logout;
     private FirebaseAuth mAuth;
 
 
@@ -92,5 +91,15 @@ public class UserProfileActivity extends AppCompatActivity {
 //                startActivity(intent);
 //            }
 //        });
+        logout=findViewById(R.id.logoutBtn);
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mAuth.signOut();
+                Intent intent=new Intent(UserProfileActivity.this,SignInUserActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
     }
 }

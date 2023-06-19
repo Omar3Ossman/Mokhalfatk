@@ -18,6 +18,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.FileProvider;
@@ -26,6 +27,11 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
+import android.Manifest;
+import android.content.pm.PackageManager;
+import android.os.Build;
+import android.widget.Toast;
+
 
 import okhttp3.MediaType;
 import okhttp3.MultipartBody;
@@ -37,9 +43,7 @@ import retrofit2.Response;
 
 
 public class CameraLPR extends AppCompatActivity {
-    public static final int CAMERA_PERM_CODE = 101;
-    public static final int CAMERA_REQUEST_CODE = 102;
-    private static final int REQUEST_IMAGE_CAPTURE = 103;
+    private static final int CAMERA_PERMISSION_CODE = 201;
     ImageView selectedImage;
     TextView cameraBtn;
     private String currentPhotoPath;
@@ -76,22 +80,45 @@ public class CameraLPR extends AppCompatActivity {
         cameraBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-
-                String fileName = "img";
-                File storageDirectory = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
-                try {
-                    File imageFile = File.createTempFile(fileName, ".jpg", storageDirectory);
-                    currentPhotoPath = imageFile.getAbsolutePath();
-                    Uri imgUri = FileProvider.getUriForFile(CameraLPR.this, "com.example.myapplication.fileprovider", imageFile);
-                    Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                    intent.putExtra(MediaStore.EXTRA_OUTPUT, imgUri);
-                    startActivityForResult(intent, 1);
-                } catch (IOException e) {
-                    e.printStackTrace();
+                if (checkCameraPermission()) {
+                    // Permission already granted, proceed with capturing the image
+                    captureImage();
+                } else {
+                    // Request camera permission
+                    requestCameraPermission();
                 }
+
             }
         });
+    }
+
+    private void captureImage() {
+        String fileName = "img";
+        File storageDirectory = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
+        try {
+            File imageFile = File.createTempFile(fileName, ".jpg", storageDirectory);
+            currentPhotoPath = imageFile.getAbsolutePath();
+            Uri imgUri = FileProvider.getUriForFile(CameraLPR.this, "com.example.myapplication.fileprovider", imageFile);
+            Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+            intent.putExtra(MediaStore.EXTRA_OUTPUT, imgUri);
+            startActivityForResult(intent, 1);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void requestCameraPermission() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            requestPermissions(new String[]{Manifest.permission.CAMERA}, CAMERA_PERMISSION_CODE);
+        }
+    }
+
+    private boolean checkCameraPermission() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            int result = checkSelfPermission(Manifest.permission.CAMERA);
+            return result == PackageManager.PERMISSION_GRANTED;
+        }
+        return false;
     }
 
 
@@ -134,13 +161,21 @@ public class CameraLPR extends AppCompatActivity {
             selectedImage.setImageBitmap(bitmap);
 
         }
-
-
     }
 
-
-
-
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == CAMERA_PERMISSION_CODE) {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                // Camera permission granted, proceed with capturing the image
+                captureImage();
+            } else {
+                // Camera permission denied
+                Toast.makeText(this, "Camera permission denied", Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
     private File convertBitmapToFile(Bitmap bitmap) {
         File file = new File(getCacheDir(), "temp_image.jpg");
         try (OutputStream outputStream = new FileOutputStream(file)) {
@@ -150,7 +185,6 @@ public class CameraLPR extends AppCompatActivity {
         } catch (IOException e) {
             e.printStackTrace();
             Log.e("error","Converterror"+e);
-
             return null;
         }
     }

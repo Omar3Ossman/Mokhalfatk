@@ -6,17 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".Card">
 
-    <ImageButton
-        android:id="@+id/backButton"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="15dp"
-        android:background="@drawable/circle_shape"
-        android:elevation="70dp"
-        android:src="@drawable/ic_back"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+
     <ImageView
         android:id="@+id/fawry_pic"
         android:layout_width="wrap_content"
@@ -44,10 +34,9 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="371dp"
             android:layout_weight=".7"
             android:paddingRight="15dp">
-
 
 
             <EditText
@@ -121,15 +110,31 @@
                 android:layout_height="40dp"
                 android:layout_below="@+id/expiry_date_layout"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="14dp"
                 android:layout_marginEnd="115dp"
                 android:background="@drawable/button"
+                android:gravity="center"
                 android:padding="5dp"
                 android:text="Confirm Payment"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:id="@+id/cancelpym"
+                android:layout_width="239dp"
+                android:layout_height="41dp"
+                android:layout_below="@+id/expiry_date_layout"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="64dp"
+                android:layout_marginEnd="115dp"
+                android:background="@drawable/button"
                 android:gravity="center"
+                android:padding="5dp"
+                android:text="Cancel Payment"
                 android:textColor="@android:color/white" />
 
         </RelativeLayout>
     </LinearLayout>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

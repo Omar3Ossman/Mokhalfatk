@@ -17,7 +17,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class OfficerProfileActivity extends AppCompatActivity {
-    TextView scanLPR;
+    TextView scanLPR,logout;
     private FirebaseAuth mAuth;
 
 
@@ -68,6 +68,17 @@ public class OfficerProfileActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(OfficerProfileActivity.this, CameraLPR.class);
                 startActivity(intent);
+            }
+        });
+        logout=findViewById(R.id.logoutBtn);
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mAuth.signOut();
+                Intent intent=new Intent(OfficerProfileActivity.this,SignInOfficerActivity.class);
+                startActivity(intent);
+                finish();
+                //Toast.makeText(OfficerProfileActivity.this, "Logout Successful", Toast.LENGTH_SHORT).show();
             }
         });
     }

@@ -88,5 +88,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent" />
 
+    <TextView
+        android:id="@+id/cancelpym"
+        android:layout_width="284dp"
+        android:layout_height="40dp"
+        android:background="@drawable/button"
+        android:gravity="center"
+        android:padding="5dp"
+        android:text="Cancel Payment"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/card_number"
+        app:layout_constraintVertical_bias="0.736" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
