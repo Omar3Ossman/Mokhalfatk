@@ -52,7 +52,7 @@ public class Fawry extends AppCompatActivity {
                 HashMap<String,Object> updates = new HashMap<>();
                 updates.put("status","PAID");
                 violationsRef.updateChildren(updates);
-                Intent intent = new Intent(Fawry.this, ViolationsActivity.class);
+                Intent intent = new Intent(Fawry.this, Congrats.class);
                 startActivity(intent);
             }
         });
