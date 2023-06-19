@@ -21,7 +21,7 @@ public class PickViolation extends AppCompatActivity implements AdapterView.OnIt
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pick_violation);
-        
+
         submit = findViewById(R.id.scanLPR);
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
