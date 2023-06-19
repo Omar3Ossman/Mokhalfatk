@@ -32,4 +32,11 @@
     <string name="User">User</string>
     <string name="Camera">Take A Photo</string>
     <string name="badge_number">Badge Number</string>
+    <string-array name="Violations">
+        <item>Speeding Ticket</item>
+        <item>Double Parking</item>
+        <item>Illegal U-turn</item>
+        <item>Running a Red Light</item>
+        <item>Stop Sign Violation</item>
+    </string-array>
 </resources>
