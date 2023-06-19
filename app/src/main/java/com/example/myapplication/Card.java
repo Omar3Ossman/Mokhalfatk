@@ -70,6 +70,7 @@ public class Card extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent=new Intent(Card.this,ViolationsActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
     }

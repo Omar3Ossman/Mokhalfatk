@@ -62,6 +62,7 @@ public class Fawry extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent=new Intent(Fawry.this,ViolationsActivity.class);
                 startActivity(intent);
+                finish();
 
             }
         });
