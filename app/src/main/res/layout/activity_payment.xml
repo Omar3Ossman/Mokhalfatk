@@ -31,7 +31,7 @@
 
     <ImageView
         android:id="@+id/paymentpic"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="300dp"
         android:padding="5dp"
         android:elevation="5dp"
@@ -39,7 +39,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@drawable/payment" />
+        tools:srcCompat="@drawable/logo1" />
 
     <TextView
         android:id="@+id/btnPayWithFawry"
