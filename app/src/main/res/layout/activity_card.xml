@@ -8,10 +8,11 @@
 
 
     <ImageView
-        android:id="@+id/fawry_pic"
+        android:id="@+id/paymentpic"
         android:layout_width="wrap_content"
-        android:layout_height="300dp"
+        android:layout_height="200dp"
         android:padding="5dp"
+        android:elevation="2dp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -29,7 +30,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.52"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fawry_pic">
+        app:layout_constraintTop_toBottomOf="@+id/paymentpic">
 
 
         <RelativeLayout
@@ -40,7 +41,7 @@
 
 
             <EditText
-                android:id="@+id/card_name"
+                android:id="@+id/fawrycode1"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_marginTop="15dp"
@@ -53,10 +54,10 @@
                 android:paddingLeft="15dp" />
 
             <EditText
-                android:id="@+id/card_number"
+                android:id="@+id/fawrycode2"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
-                android:layout_below="@+id/card_name"
+                android:layout_below="@+id/fawrycode1"
                 android:layout_marginTop="15dp"
                 android:background="@drawable/edittext_bg"
                 android:hint="Card Number"
@@ -70,7 +71,7 @@
                 android:id="@+id/expiry_date_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/card_number"
+                android:layout_below="@+id/fawrycode2"
                 android:layout_marginTop="15dp"
                 android:weightSum="1">
 
@@ -78,7 +79,7 @@
                     android:id="@+id/expiry_date"
                     android:layout_width="match_parent"
                     android:layout_height="45dp"
-                    android:layout_below="@+id/card_name"
+                    android:layout_below="@+id/fawrycode1"
                     android:layout_weight=".50"
                     android:background="@drawable/edittext_bg"
                     android:hint="MM/YY"

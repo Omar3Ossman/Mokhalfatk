@@ -3,6 +3,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -51,6 +52,8 @@ public class GenerateCode extends AppCompatActivity {
                 // Start the Fawry activity
                 Intent intent = new Intent(GenerateCode.this, Fawry.class);
                 intent.putExtra("ViolationID", violationID);
+                Log.d("TAG", "onClick: " + randomNumber);
+                intent.putExtra("GeneratedCode", randomNumber);
                 startActivity(intent);
             }
         });

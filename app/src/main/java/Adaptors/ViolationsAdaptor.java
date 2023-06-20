@@ -4,7 +4,6 @@ import com.example.myapplication.Payment;
 import com.example.myapplication.R;
 
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,7 +22,6 @@ import com.google.firebase.database.ValueEventListener;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.io.Console;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -115,7 +113,7 @@ public class ViolationsAdaptor extends RecyclerView.Adapter<ViolationsAdaptor.Vi
             ticketType = itemView.findViewById(R.id.ticketType);
             fees = itemView.findViewById(R.id.fee);
             status = itemView.findViewById(R.id.status);
-            fawryPic = itemView.findViewById(R.id.fawry_pic);
+            fawryPic = itemView.findViewById(R.id.paymentpic);
             violationId = itemView.findViewById(R.id.violationId);
         }
     }
