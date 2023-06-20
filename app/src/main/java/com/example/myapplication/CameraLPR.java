@@ -96,6 +96,8 @@ public class CameraLPR extends AppCompatActivity {
         String fileName = "img";
         File storageDirectory = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
         try {
+            imageResponse.setText("loading");
+
             File imageFile = File.createTempFile(fileName, ".jpg", storageDirectory);
             currentPhotoPath = imageFile.getAbsolutePath();
             Uri imgUri = FileProvider.getUriForFile(CameraLPR.this, "com.example.myapplication.fileprovider", imageFile);
@@ -132,28 +134,39 @@ public class CameraLPR extends AppCompatActivity {
             RequestBody requestBody = RequestBody.create(MediaType.parse("image/*"), imageFile);
             MultipartBody.Part imagePart = MultipartBody.Part.createFormData("image", imageFile.getName(), requestBody);
 
-            Call<ResponseBody> call =new RetrofitObject().api.processImage(imagePart);
-            call.enqueue(new Callback<ResponseBody>() {
+            Call<LicensePlateData> call =new RetrofitObject().api.processImage(imagePart);
+            call.enqueue(new Callback<LicensePlateData>() {
                 @Override
-                public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                public void onResponse(Call<LicensePlateData> call, Response<LicensePlateData> response) {
                     if (response.isSuccessful()) {
+                        imageResponse.setText("loading");
                         try {
-                            String jsonResponse = response.body().string();
+
+
+                            String jsonResponse = response.body().getLicensePlateNumbers().toString();
                             // Update your TextView with the response
                             //el mafrod te parse el response
+
+                            //  Log.e("success","" + response.body().getLicensePlateNumbers());
+                            Log.e("error","SuccessError" + jsonResponse);
+
                             imageResponse.setText(jsonResponse);
-                        } catch (IOException e) {
+                        } catch (Exception e) {
                             e.printStackTrace();
+                            imageResponse.setText("can't detect it");
+
                             Log.e("error","SuccessErrpr"+ e +"dsfads"+response);
                         }
                     } else {
+                        imageResponse.setText("can't detect it");
                         //hna t2ol en dih msh sort 3rbya
                         Log.e("error","SuccessErrpr"+response);
                     }
                 }
 
                 @Override
-                public void onFailure(Call<ResponseBody> call, Throwable t) {
+                public void onFailure(Call<LicensePlateData> call, Throwable t) {
+                    imageResponse.setText("can't detect it");
                     Log.e("error","Failureerror"+ t);
                 }
             });
